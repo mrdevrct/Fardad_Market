@@ -1,9 +1,9 @@
 // app/components/ProductCardSkeleton.tsx
 export default function ProductCardSkeleton() {
   return (
-    <div className="w-full lg:w-[180px] lg:h-[320px] p-[15px] shadow-md bg-white rounded-lg flex flex-col animate-pulse">
+    <div className="w-full lg:h-[400px] p-[15px] shadow-md bg-white rounded-lg flex flex-col animate-pulse gap-1">
       {/* Image Placeholder */}
-      <div className="relative w-[140px] h-[140px] mb-2 mx-auto bg-gray-200 rounded-md"></div>
+      <div className="relative w-full h-[200px] mb-2 mx-auto bg-gray-200 rounded-md"></div>
 
       {/* Title Placeholder */}
       <div className="h-5 bg-gray-200 rounded w-3/4 mx-auto mb-2"></div>

@@ -19,18 +19,18 @@ export default function ProductCard({
   const decreaseQuantity = () => setQuantity((prev) => Math.max(1, prev - 1));
 
   return (
-    <div className="w-full lg:w-[180px] lg:h-[320px] p-[15px] shadow-md bg-white rounded-lg flex flex-col">
+    <div className="w-full lg:h-[400px] p-[15px] shadow-md bg-white rounded-lg flex flex-col gap-1">
       {/* Image */}
       <Link
         href={`/products/${product.id}`}
-        className="relative w-[140px] h-[140px] mb-2 mx-auto block"
+        className="relative w-full h-[200px] mb-2 mx-auto block"
       >
         <Image
           src={product.image}
           alt={product.name}
           className="object-cover rounded-md"
           fill
-          sizes="140px"
+          sizes="200px"
           priority={isPriority}
           quality={75}
         />
@@ -44,7 +44,7 @@ export default function ProductCard({
       </Link>
 
       {/* Price */}
-      <span className="text-blue-600 text-sm text-center my-2">
+      <span className="text-blue-600 text-md font-bold text-center my-2">
         {parseInt(product.price).toLocaleString("fa-IR")} تومان
       </span>
 

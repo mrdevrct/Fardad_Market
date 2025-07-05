@@ -58,7 +58,7 @@ function ProductsContent() {
               {error}
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 justify-center min-h-[600px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center min-h-[600px]">
               {loading ? (
                 Array.from({ length: 10 }).map((_, index) => (
                   <ProductCardSkeleton key={index} />
@@ -103,7 +103,7 @@ export default function ProductsPage() {
             <FiltersSidebarSkeleton />
             <div className="w-full lg:w-4/5">
               <SortControlsSkeleton />
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 justify-center min-h-[600px]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center min-h-[600px]">
                 {Array.from({ length: 10 }).map((_, index) => (
                   <ProductCardSkeleton key={index} />
                 ))}
