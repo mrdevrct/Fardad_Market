@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --wd-container-w: 1400px;
+  --align-items: initial;
+}
+
+@theme {
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+}
+
+@utility container {
+  width: 100%;
+  max-width: var(--wd-container-w);
+  padding-inline: 15px;
+  margin-inline: auto;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.04);
+  background-image: none;
+}
+
