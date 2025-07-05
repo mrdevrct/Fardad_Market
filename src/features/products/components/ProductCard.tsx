@@ -32,6 +32,7 @@ export default function ProductCard({
           fill
           sizes="140px"
           priority={isPriority}
+          quality={75}
         />
       </Link>
 

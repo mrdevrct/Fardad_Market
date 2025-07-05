@@ -9,10 +9,11 @@ import { SortControls } from "@/features/products/components/SortControls";
 import PageHeader from "@/components/page-header/PageHeader";
 import dynamic from "next/dynamic";
 import ProductCardSkeleton from "@/features/products/components/ProductCardSkeleton";
+import { FiltersSidebarSkeleton } from "@/features/products/components/FiltersSidebarSkeleton";
+import { SortControlsSkeleton } from "@/features/products/components/SortControlsSkeleton";
 
 const ProductCard = dynamic(
-  () => import("@/features/products/components/ProductCard"),
-  { ssr: false }
+  () => import("@/features/products/components/ProductCard")
 );
 
 const productsVariants = {
@@ -71,7 +72,7 @@ function ProductsContent() {
                   <ProductCard
                     key={product.id}
                     product={product}
-                    isPriority={index < 7}
+                    isPriority={index < 10}
                   />
                 ))
               )}
@@ -98,10 +99,16 @@ export default function ProductsPage() {
       fallback={
         <div className="container mx-auto py-8">
           <PageHeader title="محصولات فروشگاه" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 justify-center min-h-[600px]">
-            {Array.from({ length: 10 }).map((_, index) => (
-              <ProductCardSkeleton key={index} />
-            ))}
+          <div className="flex flex-col lg:flex-row gap-6">
+            <FiltersSidebarSkeleton />
+            <div className="w-full lg:w-4/5">
+              <SortControlsSkeleton />
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 justify-center min-h-[600px]">
+                {Array.from({ length: 10 }).map((_, index) => (
+                  <ProductCardSkeleton key={index} />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       }

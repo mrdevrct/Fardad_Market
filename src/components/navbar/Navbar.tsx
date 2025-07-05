@@ -25,7 +25,9 @@ export default function Navbar() {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo and Navigation Links */}
         <div className="flex items-center space-x-6">
-          <h1 className="text-2xl font-bold text-blue-600">لوگو</h1>
+          <Link href="/">
+            <h1 className="text-2xl font-bold text-blue-600">لوگو</h1>
+          </Link>
           <div className="hidden md:flex items-center space-x-6">
             <Button variant="ghost" asChild>
               <Link
@@ -39,6 +41,7 @@ export default function Navbar() {
               <Link
                 href="/products"
                 className="text-gray-600 hover:text-blue-600 transition-colors"
+                prefetch
               >
                 محصولات
               </Link>
@@ -121,6 +124,7 @@ export default function Navbar() {
                 href="/products"
                 className="text-gray-600 hover:text-blue-600 transition-colors"
                 onClick={toggleMenu}
+                prefetch
               >
                 محصولات
               </Link>
