@@ -53,20 +53,56 @@ export default function ProductPageSkeleton() {
           </div>
         </div>
       </div>
+
+      {/* Description Section Skeleton */}
       <div className="bg-gray-200 p-6 rounded-lg mt-8 animate-pulse">
         <div className="h-6 w-32 bg-gray-300 rounded mb-4" />
         <div className="space-y-4">
-          <div className="flex gap-4">
-            <div className="h-5 w-24 bg-gray-300 rounded" />
-            <div className="h-5 w-32 bg-gray-300 rounded" />
-          </div>
-          <div className="flex gap-4">
-            <div className="h-5 w-24 bg-gray-300 rounded" />
-            <div className="h-5 w-32 bg-gray-300 rounded" />
-          </div>
-          <div className="flex gap-4">
-            <div className="h-5 w-24 bg-gray-300 rounded" />
-            <div className="h-5 w-32 bg-gray-300 rounded" />
+          {Array.from({ length: 3 }).map((_, index) => (
+            <div key={index} className="flex gap-4">
+              <div className="h-5 w-24 bg-gray-300 rounded" />
+              <div className="h-5 w-32 bg-gray-300 rounded" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Reviews Section Skeleton */}
+      <div className="bg-gray-200 p-6 rounded-lg mt-8 animate-pulse">
+        <div className="h-6 w-32 bg-gray-300 rounded mb-4" />
+        <div className="space-y-4">
+          {/* Review Items */}
+          {Array.from({ length: 2 }).map((_, index) => (
+            <div key={index} className="border-b border-gray-300 pb-4">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="h-5 w-24 bg-gray-300 rounded" />
+                <div className="flex gap-1">
+                  {Array.from({ length: 5 }).map((_, starIndex) => (
+                    <div
+                      key={starIndex}
+                      className="h-5 w-5 bg-gray-300 rounded-full"
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="h-4 w-full bg-gray-300 rounded" />
+              <div className="h-4 w-3/4 bg-gray-300 rounded mt-1" />
+            </div>
+          ))}
+        </div>
+        {/* Review Form Skeleton */}
+        <div className="mt-6">
+          <div className="h-5 w-28 bg-gray-300 rounded mb-4" />
+          <div className="space-y-4">
+            <div className="h-9 w-full bg-gray-300 rounded" />
+            <div className="h-9 w-full bg-gray-300 rounded" />
+            <div className="h-24 w-full bg-gray-300 rounded" />
+            <div className="flex gap-1">
+              {Array.from({ length: 5 }).map((_, index) => (
+                <div key={index} className="h-6 w-6 bg-gray-300 rounded-full" />
+              ))}
+            </div>
+            <div className="h-10 w-32 bg-gray-300 rounded" />
           </div>
         </div>
       </div>
