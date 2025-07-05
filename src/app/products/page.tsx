@@ -12,14 +12,31 @@ import ProductCardSkeleton from "@/features/products/components/ProductCardSkele
 import { FiltersSidebarSkeleton } from "@/features/products/components/FiltersSidebarSkeleton";
 import { SortControlsSkeleton } from "@/features/products/components/SortControlsSkeleton";
 
+// Dynamic import for ProductCard
 const ProductCard = dynamic(
   () => import("@/features/products/components/ProductCard")
 );
 
-const productsVariants = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 0.1 } },
-  exit: { opacity: 0 },
+// Page animation variants
+const pageVariants = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  exit: { opacity: 0, y: -20, transition: { duration: 0.3, ease: "easeIn" } },
+};
+
+// Product card animation variants
+const productVariants = {
+  initial: { opacity: 0, y: 50 },
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      delay: index * 0.1, // Stagger effect for each card
+      ease: "easeOut",
+    },
+  }),
+  exit: { opacity: 0, y: 50, transition: { duration: 0.3, ease: "easeIn" } }, // Added exit for consistency
 };
 
 function ProductsContent() {
@@ -34,10 +51,7 @@ function ProductsContent() {
   const { data, loading, error } = useProducts(filters);
 
   return (
-    <MotionWrapper
-      variants={productsVariants}
-      className="container mx-auto py-8"
-    >
+    <MotionWrapper variants={pageVariants} className="container mx-auto py-8">
       <PageHeader title="محصولات فروشگاه" pageLink="/products" />
       <div className="flex flex-col lg:flex-row gap-6">
         <FiltersSidebar
@@ -69,11 +83,13 @@ function ProductsContent() {
                 </div>
               ) : (
                 data.products.map((product, index) => (
-                  <ProductCard
+                  <MotionWrapper
                     key={product.id}
-                    product={product}
-                    isPriority={index < 10}
-                  />
+                    variants={productVariants}
+                    custom={index} // Pass index for staggered animation
+                  >
+                    <ProductCard product={product} isPriority={index < 10} />
+                  </MotionWrapper>
                 ))
               )}
             </div>

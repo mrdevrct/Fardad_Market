@@ -1,30 +1,36 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { AnimatePresence, motion, Variants } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
 
 interface MotionWrapperProps {
   children: ReactNode;
-  variants: Variants;
+  variants: any;
   className?: string;
+  custom?: any; 
+  keyProp?: string;
 }
 
 export default function MotionWrapper({
   children,
   variants,
   className,
+  custom,
+  keyProp,
 }: MotionWrapperProps) {
   const pathname = usePathname();
+  const animationKey = keyProp || pathname; 
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence mode="wait">
       <motion.div
-        key={pathname}
+        key={animationKey}
         variants={variants}
         initial="initial"
         animate="animate"
         exit="exit"
-        transition={{ duration: 0.1, ease: "easeInOut" }}
+        custom={custom}
         className={className}
       >
         {children}

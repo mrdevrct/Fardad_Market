@@ -9,9 +9,9 @@ import { ProductDescriptionSection } from "@/features/products/components/Produc
 import { ProductReviewsSection } from "@/features/products/components/ProductReviewsSection";
 
 const productVariants = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 0.1 } },
-  exit: { opacity: 0 },
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  exit: { opacity: 0, y: -20, transition: { duration: 0.3, ease: "easeIn" } },
 };
 
 const initialReviews = [
@@ -54,6 +54,7 @@ export default function ProductPage() {
     <MotionWrapper
       variants={productVariants}
       className="container mx-auto px-4 py-8"
+      keyProp={id} // استفاده از id محصول به‌عنوان key برای اجرای انیمیشن
     >
       <div className="flex flex-col lg:flex-row gap-8">
         <ProductImageSection images={images} productName={product.name} />

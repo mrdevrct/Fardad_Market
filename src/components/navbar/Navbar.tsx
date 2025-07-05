@@ -48,6 +48,15 @@ export default function Navbar() {
             </Button>
             <Button variant="ghost" asChild>
               <Link
+                href="/posts"
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+                prefetch
+              >
+                پست‌ها
+              </Link>
+            </Button>
+            <Button variant="ghost" asChild>
+              <Link
                 href="/about"
                 className="text-gray-600 hover:text-blue-600 transition-colors"
               >
@@ -127,6 +136,16 @@ export default function Navbar() {
                 prefetch
               >
                 محصولات
+              </Link>
+            </Button>
+            <Button variant="ghost" asChild>
+              <Link
+                href="/posts"
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+                onClick={toggleMenu}
+                prefetch
+              >
+                پست‌ها
               </Link>
             </Button>
             <Button variant="ghost" asChild>
