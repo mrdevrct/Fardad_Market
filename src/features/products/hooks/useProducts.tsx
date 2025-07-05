@@ -1,4 +1,3 @@
-// features/products/hooks/useProducts.tsx
 import { useState, useEffect, useCallback } from "react";
 import api, { getApiUrl } from "@/libs/axios";
 import endpoints from "@/endpoints";
