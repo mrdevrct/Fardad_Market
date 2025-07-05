@@ -97,7 +97,7 @@ export default function Footer() {
         <p className="text-sm text-gray-600">
           © ۱۴۰۴ | تمامی حقوق محفوظ است. طراحی و توسعه توسط{" "}
           <Link href="/" className="text-blue-600 hover:underline">
-            تیم ما (فخردوزان و حسینی)
+            تیم وبینو (Devrct)
           </Link>
         </p>
       </div>
