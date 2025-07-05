@@ -38,7 +38,7 @@ function ProductsContent() {
       variants={productsVariants}
       className="container mx-auto py-8"
     >
-      <PageHeader title="محصولات فروشگاه" />
+      <PageHeader title="محصولات فروشگاه" pageLink="/products" />
       <div className="flex flex-col lg:flex-row gap-6">
         <FiltersSidebar
           filters={filters}
@@ -98,7 +98,7 @@ export default function ProductsPage() {
     <Suspense
       fallback={
         <div className="container mx-auto py-8">
-          <PageHeader title="محصولات فروشگاه" />
+          <PageHeader title="محصولات فروشگاه" pageLink="/products" />
           <div className="flex flex-col lg:flex-row gap-6">
             <FiltersSidebarSkeleton />
             <div className="w-full lg:w-4/5">
