@@ -6,9 +6,9 @@ export default function ProductPageSkeleton() {
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Image Section Skeleton */}
-        <div className="w-full lg:w-[40%] max-w-[420px] flex gap-4 flex-shrink-0">
+        <div className="w-full lg:w-[40%] max-w-[420px] flex flex-col-reverse md:flex-row flex-shrink-0 gap-4 mx-auto">
           {/* Thumbnails */}
-          <div className="flex flex-col gap-2 w-20 flex-shrink-0">
+          <div className="flex flex-row md:flex-col gap-2 w-20 flex-shrink-0">
             {Array.from({ length: 4 }).map((_, index) => (
               <div
                 key={index}
